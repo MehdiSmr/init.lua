@@ -1,1 +1,1 @@
-### 🌀 My Neovim init.lua Configuration
+### 🌀 My Neovim init.lua config
