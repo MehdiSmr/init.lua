@@ -42,6 +42,14 @@ require("nvim-tree").setup({
             },
         },
     },
+    filters = {
+        dotfiles = false, -- Show dotfiles (set to true to hide)
+        git_ignored = false, -- Show git-ignored files
+    },
+    git = {
+        enable = true,
+        ignore = false, -- Disable git-ignore filtering
+    },
 })
 -- Global fillchars setting
 vim.opt.fillchars = { eob = " " }
