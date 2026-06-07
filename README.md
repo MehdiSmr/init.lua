@@ -4,7 +4,7 @@ A personal Neovim configuration built on [packer.nvim](https://github.com/wbthom
 
 > Requires **Neovim 0.11+** (uses the modern `vim.lsp.config` / `vim.lsp.enable` API).
 
-## ✨ Features
+## Features
 
 - **LSP** via `nvim-lspconfig` + `mason.nvim` + `mason-lspconfig` (auto-installs servers)
 - **Completion** with [blink.cmp](https://github.com/saghen/blink.cmp) and `friendly-snippets`
@@ -16,7 +16,7 @@ A personal Neovim configuration built on [packer.nvim](https://github.com/wbthom
 - **Undo history** with [undotree](https://github.com/mbbill/undotree)
 - **AI completion** with GitHub Copilot
 
-## 📦 Installation
+## Installation
 
 1. Back up any existing config:
 
@@ -47,7 +47,7 @@ A personal Neovim configuration built on [packer.nvim](https://github.com/wbthom
    install the configured LSP servers (`lua_ls`, `pyright`, `bashls`, `html`,
    `ts_ls`, and more) on first launch.
 
-## 🗂 Structure
+## Structure
 
 ```
 .
@@ -66,7 +66,7 @@ A personal Neovim configuration built on [packer.nvim](https://github.com/wbthom
     └── colors.lua
 ```
 
-## ⌨️ Keybindings
+## Keybindings
 
 Leader key is `<Space>`.
 
@@ -114,6 +114,6 @@ Leader key is `<Space>`.
 | `<leader>gt` | Open Fugitive (Git) |
 | `<leader>u`  | Toggle Undotree     |
 
-## 📝 License
+## License
 
-Free to use and adapt.
+Released under the [MIT License](LICENSE).
