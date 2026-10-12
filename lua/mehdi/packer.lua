@@ -20,13 +20,12 @@ return require("packer").startup(function(use)
     end,
   }
 
-  -- Treesitter (IMPORTANT: see note below about Neovim 0.11 vs 0.12)
+  -- Treesitter: the `main` branch supports Neovim 0.12+ (`master` only 0.10/0.11).
+  -- Needs the tree-sitter CLI: brew install tree-sitter-cli
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    branch = "master",
-    -- If you're on Neovim 0.11.x, uncomment the next line to stay compatible:
-    -- branch = "master",
+    branch = "main",
   }
 
   -- REMOVE this: it breaks on modern treesitter (define_modules is gone)
@@ -97,7 +96,12 @@ return require("packer").startup(function(use)
       cfg("cssls", {})
       cfg("dockerls", {})
       cfg("docker_compose_language_service", {})
-      cfg("clangd", {})
+      -- clangd must match the compiler's LLVM version, so prefer Homebrew LLVM's
+      -- over Mason's when it exists; otherwise use whatever clangd is on PATH
+      local brew_clangd = "/opt/homebrew/opt/llvm/bin/clangd"
+      cfg("clangd", {
+        cmd = { vim.fn.executable(brew_clangd) == 1 and brew_clangd or "clangd" },
+      })
       cfg("vuels", {})
       cfg("ast_grep", {})
       cfg("djlsp", {})

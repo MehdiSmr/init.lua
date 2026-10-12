@@ -50,6 +50,10 @@ require("nvim-tree").setup({
         enable = true,
         ignore = false, -- Disable git-ignore filtering
     },
+    -- Needs the SessionWritePre event, which this Neovim nightly predates
+    experimental = {
+        session_restore_nvim = false,
+    },
 })
 -- Global fillchars setting
 vim.opt.fillchars = { eob = " " }

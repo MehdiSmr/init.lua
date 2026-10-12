@@ -2,7 +2,24 @@
 
 A personal Neovim configuration built on [packer.nvim](https://github.com/wbthomason/packer.nvim), with LSP, completion, fuzzy finding, a file tree, and the [Rose Pine](https://github.com/rose-pine/neovim) theme.
 
-> Requires **Neovim 0.11+** (uses the modern `vim.lsp.config` / `vim.lsp.enable` API).
+## Requirements
+
+- **Neovim 0.12+, stable release.** nvim-treesitter's `main` branch needs 0.12+, and some plugins break on older nightly builds.
+- **[tree-sitter CLI](https://github.com/tree-sitter/tree-sitter)** and a C compiler, to build the treesitter parsers.
+- **clangd (for C/C++)**: it should come from the same LLVM version as the compiler your projects use. On macOS, the config uses Homebrew LLVM's clangd (`/opt/homebrew/opt/llvm/bin/clangd`) if it's installed; otherwise it uses whichever `clangd` is on `PATH`.
+
+macOS:
+
+```sh
+brew install neovim tree-sitter-cli llvm
+```
+
+Ubuntu / Debian (the apt `neovim` package is often older than 0.12, so install a release from [GitHub](https://github.com/neovim/neovim/releases) instead):
+
+```sh
+sudo apt install build-essential clangd
+cargo install --locked tree-sitter-cli   # or: npm install -g tree-sitter-cli
+```
 
 ## Features
 
